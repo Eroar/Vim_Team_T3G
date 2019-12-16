@@ -7,15 +7,14 @@ public class ScoreLoader : MonoBehaviour
 {
     BinaryWriter writer;
     BinaryReader reader;
-    string path;
-    int[] scores;
+    [SerializeField]string path;
+    [SerializeField]int[] scores;
     private void Awake()
     {
         path = Path.Combine(Application.persistentDataPath, "scores.txt");
 
         writer = new BinaryWriter(File.Open(path,FileMode.Create));
         reader = new BinaryReader(File.Open(path, FileMode.Open));
-        scores = new int[10];
         addScore(3);
     }
     void addScore(int score)
@@ -43,7 +42,7 @@ public class ScoreLoader : MonoBehaviour
     }
     int[] getScores()
     {
-        int size;
+        int size = 0;
         size = reader.ReadInt32();
         scores = new int[size];
         for(int i = 0;i<size;i++)
