@@ -1,18 +1,17 @@
 #Our ignors:
 .vscode/
-Temp/
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+/VimStuff/[Ll]ibrary/
+/VimStuff/[Tt]emp/
+/VimStuff/[Oo]bj/
+/VimStuff/[Bb]uild/
+/VimStuff/[Bb]uilds/
+/VimStuff/[Ll]ogs/
+/VimStuff/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
