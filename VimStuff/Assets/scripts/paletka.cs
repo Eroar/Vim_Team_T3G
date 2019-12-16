@@ -24,12 +24,12 @@ public class paletka : MonoBehaviour
         if (Input.GetKey("a"))
         {
             rigidbody.AddForce(new Vector3(-speed,0,0));
-            Debug.Log("addingForce");
+            //Debug.Log("addingForce");
         }
         if (Input.GetKey("d"))
         {
             rigidbody.AddForce(new Vector3(speed,0,0));
-            Debug.Log("addingForce");
+            //Debug.Log("addingForce");
         }
         Vector3 dist = Pos.position - zeroPoint;
         if (dist.magnitude > maxAxis)
@@ -42,7 +42,7 @@ public class paletka : MonoBehaviour
             {
                 Pos.position = new Vector3(zeroPoint.x - maxAxis, Pos.position.y, Pos.position.z);
             }
-            Debug.Log("Limiter");
+            //Debug.Log("Limiter");
 
 
         }
