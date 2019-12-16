@@ -8,32 +8,31 @@ public class EnemyFactory : MonoBehaviour
     List<Transform> enemies;
 
     [SerializeField] float distance;
-    [SerializeField] int row;
-    [SerializeField] int columns;
+    [SerializeField] float left;
+    [SerializeField] float right;
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         enemies = new List<Transform>();
     }
     void Start()
     {
-        SpawnRow(new Vector2(-5,2));
+        SpawnRow(10, 3);
     }
 
     void AddEnemy(Vector2 pos)
     {
         enemies.Add(Instantiate(penemy));
         enemies[enemies.Count - 1].SetParent(this.transform);
-        enemies[enemies.Count - 1].position = new Vector3(pos.x,pos.y,0);
+        enemies[enemies.Count - 1].localPosition = new Vector3(pos.x,pos.y,0);
     }
-    void SpawnRow(Vector2 pos)
+    void SpawnRow(int count,float height)
     {
-        for(int i = 0;i<row;i++)
+        for(int i = 0;i<count;i++)
         {
-            AddEnemy(new Vector2(i * distance, 0) + pos);
-            Debug.Log(i);
+            AddEnemy(new Vector2(left + (float)(left-right)/(float) i, 0) + new Vector2(0,height));
         }
-    }
+   
 
     // Update is called once per frame
     void Update()

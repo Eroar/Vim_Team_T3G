@@ -15,8 +15,11 @@ public class moveEnemy : MonoBehaviour
     private int xDirection;
     private bool movingDown;
 
+    private Transform transform;
+
     void Start()
     {
+        transform =  gameObject.GetComponent<Transform>();
         movingDown = false;
         xDirection = -1;
         movementDirection.Set(-1, 0, 0);
@@ -24,9 +27,6 @@ public class moveEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Transform transform = gameObject.GetComponent<Transform>();
-        transform.Translate(movementDirection*movementSpeed);
-
         if(((transform.position.x <= leftBound) || (transform.position.x >= rightBound)) && (!movingDown))
         {
             movingDown = true;
@@ -42,5 +42,7 @@ public class moveEnemy : MonoBehaviour
             movingDown = false;
             movementDirection = new Vector3(xDirection*1, 0, 0);
         }
+        
+        transform.Translate(movementDirection*movementSpeed);
     }
 }
