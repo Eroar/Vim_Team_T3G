@@ -30,7 +30,7 @@ public class EnemyFactory : MonoBehaviour
     {
         for(int i = 0;i<count;i++)
         {
-            AddEnemy(new Vector2(left + (float)(left-right)/(float) i, 0) + new Vector2(0,height));
+            AddEnemy(new Vector2(left + (float)i*(left-right)/(float) count, 0) + new Vector2(0,height));
         }
    
 
