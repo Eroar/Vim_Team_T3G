@@ -1,0 +1,7 @@
+Paletka_Movement:
+    Members:
+        -speed
+    Methods:
+        +getSpeed(): float
+        +setSpeed(newSpeed: float): void
+        +move(canMove: bool): void
